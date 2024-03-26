@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import logo from '../assets/logo.png'
 import { IoLanguage } from "react-icons/io5";
 
@@ -8,7 +9,7 @@ const Header = () => {
       <div className="nav border-1 border-white w-[1080px] mx-auto my-0">
         <div className='flex justify-between items-center'>
           <div className="logo">
-            <img src={logo} alt="logo" className='w-[180px]' />
+            <img src={logo} alt="logo" className='w-[200px]' />
           </div>
           <div className='flex items-center gap-x-6'>
             <div className='flex items-center justify-center text-white'>

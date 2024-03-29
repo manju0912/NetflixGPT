@@ -1,4 +1,3 @@
-import React from 'react'
 import {Link} from 'react-router-dom'
 import logo from '../assets/logo.png'
 import { IoLanguage } from "react-icons/io5";
@@ -19,7 +18,7 @@ const Header = () => {
                 <option value="हिन्दी">हिन्दी</option>
               </select>
             </div>
-            <button onClick={(e) => e.preventDefault()} className='text-white bg-[#e50914] px-4 py-1 rounded-md hover:bg-[#C2050E] transition ease-linear'>Sign In</button>
+            <button className='text-white bg-[#e50914] px-4 py-1 rounded-md hover:bg-[#C2050E] transition ease-linear'>Sign In</button>
           </div>
         </div>
       </div>

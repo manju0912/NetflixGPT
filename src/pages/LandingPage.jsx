@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { MdArrowForwardIos } from "react-icons/md";
 import tv from '../assets/tv.png'
 import videoTv from '../assets/video-tv-in-0819.m4v'
@@ -46,7 +46,7 @@ const LandingPage = () => {
           </div>
           <div className='relative'>
             <img src={tv} alt="tv" className='object-cover relative z-20' />
-            <video className='absolute w-[80%] bottom-[20%] left-[10%]' autoPlay>
+            <video className='absolute w-[80%] bottom-[20%] left-[10%]' autoPlay loop muted>
               <source src={videoTv} />
             </video>
           </div>
@@ -81,7 +81,7 @@ const LandingPage = () => {
           </div>
           <div className='relative'>
             <img src={devicePile} alt="tv" className='relative z-20' />
-            <video className='absolute w-[62%] bottom-[40%] left-[18%]' autoPlay>
+            <video className='absolute w-[62%] bottom-[40%] left-[18%]' autoPlay loop muted>
               <source src={movieClip} />
             </video>
           </div>

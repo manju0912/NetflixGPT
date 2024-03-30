@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { checkValidData } from '../utils/validate'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../utils/firebase';
 
 const Login = () => {
 
@@ -13,8 +14,9 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
 
-  const handleFormSubmit = () => {
-    if (name.current && email.current && password.current){
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // if (name.current && email.current && password.current){
       
       const errors = checkValidData(name.current.value, email.current.value, password.current.value);
 
@@ -26,7 +28,6 @@ const Login = () => {
 
       if (!isSignIn) {
         // Sign up Logic
-        const auth = getAuth();
         createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           // Signed up 
@@ -35,9 +36,10 @@ const Login = () => {
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          setEmailErrorMessage(errorCode+"-"+errorMessage);
+          // const errorCode = error.code;
+          // const errorMessage = error.message;
+          // setEmailErrorMessage(errorCode+"-"+errorMessage);
+          console.log(error);
           // ..
         });
         // Sign In Logic
@@ -49,11 +51,12 @@ const Login = () => {
             // ...
           })
           .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            setEmailErrorMessage(errorCode+"-"+errorMessage);
+            // const errorCode = error.code;
+            // const errorMessage = error.message;
+            // setEmailErrorMessage(errorCode+"-"+errorMessage);
+            console.log(error);
           });
-      }
+      // }
     }
     
   }
@@ -66,7 +69,7 @@ const Login = () => {
     <section className='w-full h-[1080px] bg-[url("/src/assets/banner.jpg")] bg-left-top'>
       <div className="w-full h-full bg-black/50">
         <div className='w-[35%] p-[5%] bg-black/80 left-[50%] top-[60%] translate-x-[-50%] translate-y-[-50%] absolute'> 
-          <form onSubmit={(e) => e.preventDefault()} className='text-white'>
+          <form onSubmit={handleFormSubmit} className='text-white'>
             <h2 className='text-[30px] font-bold'>{isSignIn ? "Sign In" : "Sign Up"}</h2>
             {
               !isSignIn && (
@@ -86,8 +89,7 @@ const Login = () => {
               <input ref={password} type="password" name="pass" placeholder='Password' className='w-full border-[1px] border-white/70 bg-transparent rounded-[4px] p-[10px]' />
             </div>
             <p className='mt-4 text-[#e50914]'>{passwordErrorMessage}</p>
-            <button type='submit' className='text-white bg-[#e50914] w-full mt-6 mb-4 py-[10px] rounded-[4px] font-medium' 
-              onClick={handleFormSubmit}>
+            <button type='submit' className='text-white bg-[#e50914] w-full mt-6 mb-4 py-[10px] rounded-[4px] font-medium'>
               {isSignIn ? "Sign In" : "Sign Up"}
             </button>
             {isSignIn && (

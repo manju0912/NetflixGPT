@@ -24,25 +24,25 @@ const LandingPage = () => {
 
   return (
     <main className='bg-black w-full'>
-      <section className='w-full h-[100vh] bg-[url("/src/assets/banner.jpg")] bg-bottom bg-cover'>
+      <section className='xl-w-[1080px] sm-[600px] h-[100vh] bg-[url("/src/assets/banner.jpg")] bg-bottom bg-cover'>
         <div className="w-full h-[100vh] bg-black/60">
-          <div className=' w-full text-white text-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute'>
-            <h1 className='text-[60px] font-bold'>Unlimited movies, TV shows and more</h1>
-            <p className='text-[28px] my-2'>Watch anywhere. Cancel anytime.</p>
-            <p className='text-[22px] my-4'>Ready to watch? Enter your email to create or restart your membership.</p>
-            <div className="w-[50%] flex items-center justify-center mx-auto gap-3 mt-8">
-              <input type="email" placeholder='Email address' className='w-[60%] px-4 h-[60px] rounded-md bg-black/70 border-[1px] outline-none border-white/70 text-lg' />
-              <button className='text-white bg-[#e50914] h-[60px] px-10 rounded-md border-[1px] border-black/30 text-[24px] flex items-center hover:bg-[#C2050E] transition ease-linear'>Get Started <span className='w-[20px] h-[20px] ml-2'><MdArrowForwardIos /></span></button>
+          <div className=' w-full text-white text-center top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute sm:px-[40px] px-0'>
+            <h1 className='md:text-[56px] text-[32px] font-bold'>Unlimited movies, TV shows and more</h1>
+            <p className='md:text-[28px] text-[18px] my-2'>Watch anywhere. Cancel anytime.</p>
+            <p className='md:text-[22px] text-[18px] my-4 sm:px-[40px] px-0'>Ready to watch? Enter your email to create or restart your membership.</p>
+            <div className="md:w-[50%] w-[90%] flex items-center justify-center mx-auto gap-3 md:mt-8 mt-4">
+              <input type="email" placeholder='Email address' className='sm:w-[60%] px-4 h-[60px] md:rounded-md rounded-[4px] bg-black/50 border-[1px] outline-none border-white/70 text-lg sm:text-base' />
+              <button className='text-white bg-[#e50914] h-[60px] md:px-10 px-[20px] md:rounded-md rounded-[4px] border-[1px] border-black/30 text-[24px] flex items-center hover:bg-[#C2050E] transition ease-linear'>Get Started <span className='w-[20px] h-[20px] ml-2'><MdArrowForwardIos /></span></button>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="w-full py-20 border-t-8 border-[#2d2d2d]">
-        <div className="grid grid-cols-2 w-[1080px] text-white m-auto items-center">
+      <section className="xl-w-[1080px] sm-[600px] py-20 border-t-8 border-[#2d2d2d]">
+        <div className="lg:grid lg:grid-cols-2 sm:flex sm:flex-col sm:justify-center sm:items-center w-[1080px] text-white m-auto items-center">
           <div>
-            <h2 className='text-[58px] font-bold'>Enjoy on your TV</h2>
-            <p className='text-[26px]'>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+            <h2 className='md:text-[58px] text-[32px] font-bold'>Enjoy on your TV</h2>
+            <p className='md:text-[26px] text-[18px]'>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
           </div>
           <div className='relative'>
             <img src={tv} alt="tv" className='object-cover relative z-20' />
@@ -53,7 +53,7 @@ const LandingPage = () => {
         </div> 
       </section>
 
-      <section className="w-full py-20 border-t-8 border-[#2d2d2d]">
+      <section className="xl-w-[1080px] sm-[600px] py-20 border-t-8 border-[#2d2d2d]">
         <div className="grid grid-cols-2 items-center w-[1080px] mx-auto">
           <div className="relative">
             <img src={mobile} alt="mobile mockup" className='mx-auto z-10 relative' />
@@ -73,7 +73,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="w-full py-20 border-t-8 border-[#2d2d2d]">
+      <section className="xl-w-[1080px] sm-[600px] py-20 border-t-8 border-[#2d2d2d]">
         <div className="grid grid-cols-2 w-[1080px] text-white m-auto items-center">
           <div>
             <h2 className='text-[58px] font-bold'>Watch everywhere</h2>
@@ -88,7 +88,7 @@ const LandingPage = () => {
         </div> 
       </section>
 
-      <section className="w-full py-20 border-t-8 border-[#2d2d2d]">
+      <section className="xl-w-[1080px] sm-[600px] py-20 border-t-8 border-[#2d2d2d]">
         <div className="w-[1080px] grid grid-cols-2 items-center mx-auto">
           <div>
             <img src={kidsPoster} alt="Kids Poster"/>
@@ -100,7 +100,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="w-full py-20 border-t-8 border-[#2d2d2d]">
+      <section className="xl-w-[1080px] sm-[600px] py-20 border-t-8 border-[#2d2d2d]">
         <div className='w-[1080px] mx-auto text-white'>
           <h2 className='text-center text-[50px] font-extrabold'>Frequently Asked Questions</h2>
           {/* Accordion */}

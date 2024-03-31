@@ -24,8 +24,6 @@ const Login = () => {
       setEmailErrorMessage(errors.email || '');
       setPasswordErrorMessage(errors.password || '');
 
-      if (errors) return;
-
       if (!isSignIn) {
         // Sign up Logic
         createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
@@ -38,7 +36,7 @@ const Login = () => {
         .catch((error) => {
           // const errorCode = error.code;
           // const errorMessage = error.message;
-          // setEmailErrorMessage(errorCode+"-"+errorMessage);
+          // setEmailErrorMessage(error);
           console.log(error);
           // ..
         });
@@ -51,9 +49,7 @@ const Login = () => {
             // ...
           })
           .catch((error) => {
-            // const errorCode = error.code;
-            // const errorMessage = error.message;
-            // setEmailErrorMessage(errorCode+"-"+errorMessage);
+            // setEmailErrorMessage(error);
             console.log(error);
           });
       // }

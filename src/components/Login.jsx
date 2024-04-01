@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { checkValidData } from '../utils/validate'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../utils/firebase';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -14,9 +15,11 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
 
+  const navigate = useNavigate();
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // if (name.current && email.current && password.current){
+    if (name.current && email.current && password.current){
       
       const errors = checkValidData(name.current.value, email.current.value, password.current.value);
 
@@ -28,31 +31,27 @@ const Login = () => {
         // Sign up Logic
         createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          // Signed up 
           const user = userCredential.user;
           console.log('user created successfully', user);
-          // ...
+          navigate('/home');
         })
         .catch((error) => {
-          // const errorCode = error.code;
-          // const errorMessage = error.message;
-          // setEmailErrorMessage(error);
           console.log(error);
           // ..
         });
+      } else {
         // Sign In Logic
         signInWithEmailAndPassword(auth, email.current.value, password.current.value)
-          .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            console.log('user sign in', user)
-            // ...
-          })
-          .catch((error) => {
-            // setEmailErrorMessage(error);
-            console.log(error);
-          });
-      // }
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log('user sign in', user);
+          console.log(email.current.value);
+          navigate('/home');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      }
     }
     
   }
@@ -62,9 +61,9 @@ const Login = () => {
   }
 
   return (
-    <section className='w-full h-[1080px] bg-[url("/src/assets/banner.jpg")] bg-left-top'>
-      <div className="w-full h-full bg-black/50">
-        <div className='w-[35%] p-[5%] bg-black/80 left-[50%] top-[60%] translate-x-[-50%] translate-y-[-50%] absolute'> 
+    <section className='w-full h-[100%] bg-[url("/src/assets/banner.jpg")] bg-left-top'>
+      <div className="w-full h-full bg-black/60 lg:py-[10%] py-[12%]">
+        <div className='lg:w-[35%] w-[60%] p-[5%] bg-black/80 mx-auto'> 
           <form onSubmit={handleFormSubmit} className='text-white'>
             <h2 className='text-[30px] font-bold'>{isSignIn ? "Sign In" : "Sign Up"}</h2>
             {
@@ -93,7 +92,7 @@ const Login = () => {
             )}
             <div className='text-white'>
               <div className='mt-[20%] mb-4'>
-                <input type="checkbox" className='w-4 h-4' />
+                <input type="checkbox" defaultChecked className='w-4 h-4' />
                 <label className='ml-2'>Remember me</label>
               </div>
               {

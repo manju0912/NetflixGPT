@@ -17,11 +17,9 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    if (name.current && email.current && password.current){
-      
-      const errors = checkValidData(name.current.value, email.current.value, password.current.value);
+  const handleFormSubmit = () => {
+
+      const errors = checkValidData(name.current?.value, email.current?.value, password.current?.value);
 
       setNameErrorMessage(errors.name || '');
       setEmailErrorMessage(errors.email || '');
@@ -39,19 +37,17 @@ const Login = () => {
           console.log(error);
           // ..
         });
-      } else {
+      }else{
         // Sign In Logic
         signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           const user = userCredential.user;
           console.log('user sign in', user);
-          console.log(email.current.value);
           navigate('/home');
         })
         .catch((error) => {
           console.log(error);
         });
-      }
     }
     
   }
@@ -62,9 +58,9 @@ const Login = () => {
 
   return (
     <section className='w-full h-[100%] bg-[url("/src/assets/banner.jpg")] bg-left-top'>
-      <div className="w-full h-full bg-black/60 lg:py-[10%] py-[12%]">
+      <div className="w-full h-full bg-black/50 lg:py-[10%] py-[12%]">
         <div className='lg:w-[35%] w-[60%] p-[5%] bg-black/80 mx-auto'> 
-          <form onSubmit={handleFormSubmit} className='text-white'>
+          <form onSubmit={(e) => e.preventDefault()} className='text-white'>
             <h2 className='text-[30px] font-bold'>{isSignIn ? "Sign In" : "Sign Up"}</h2>
             {
               !isSignIn && (
@@ -84,7 +80,7 @@ const Login = () => {
               <input ref={password} type="password" name="pass" placeholder='Password' className='w-full border-[1px] border-white/70 bg-transparent rounded-[4px] p-[10px]' />
             </div>
             <p className='mt-4 text-[#e50914]'>{passwordErrorMessage}</p>
-            <button type='submit' className='text-white bg-[#e50914] w-full mt-6 mb-4 py-[10px] rounded-[4px] font-medium'>
+            <button type='submit' className='text-white bg-[#e50914] w-full mt-6 mb-4 py-[10px] rounded-[4px] font-medium' onClick={() => handleFormSubmit()}>
               {isSignIn ? "Sign In" : "Sign Up"}
             </button>
             {isSignIn && (

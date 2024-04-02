@@ -8,13 +8,11 @@ import store from './store/store'
 function App() {
 
   return (
-    <>
-      <Provider store={store}>
-        <Header />
-        <Body />
-        <Footer />
-      </Provider>
-    </>
+    <Provider store={store}>
+      <Header />
+      <Body />
+      <Footer />
+    </Provider>
   )
 }
 

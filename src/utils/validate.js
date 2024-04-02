@@ -17,4 +17,5 @@ export const checkValidData = (name, email, password) => {
     }
 
     return errors;
+    
 }

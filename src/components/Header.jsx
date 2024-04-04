@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import { IoLanguage } from "react-icons/io5";
 import { useSelector } from 'react-redux';
@@ -9,13 +9,10 @@ import profileIcon from '../assets/profile-icon.jpg'
 const Header = () => {
 
   const user = useSelector((store) => store.user);
-  const navigate = useNavigate();
 
   const handleSignOut = () => {
     signOut(auth)
-    .then(() => {
-      navigate('/')
-    }).catch((error) => {
+    .then(() => {}).catch((error) => {
       console.log(error);
     });
   }

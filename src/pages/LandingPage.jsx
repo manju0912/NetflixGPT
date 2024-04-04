@@ -30,7 +30,7 @@ const LandingPage = () => {
             <h1 className='lg:text-[56px] text-[32px] font-bold'>Unlimited movies, TV shows and more</h1>
             <p className='lg:text-[28px] md:text-[20px] text-[18px] my-2'>Watch anywhere. Cancel anytime.</p>
             <p className='lg:text-[22px] text-[18px] lg:my-4 my-6 sm:px-[40px] px-0'>Ready to watch? Enter your email to create or restart your membership.</p>
-            <div className="lg:w-[50%] w-[90%] flex items-center justify-center mx-auto gap-3 lg:mt-8 mt-4">
+            <div className="lg:w-[60%] w-[90%] flex items-center justify-center mx-auto gap-3 lg:mt-8 mt-4">
               <input type="email" placeholder='Email address' className='sm:w-[60%] px-4 h-[60px] lg:rounded-md rounded-[4px] bg-black/50 border-[1px] outline-none border-white/50 text-lg sm:text-base' />
               <button className='text-white bg-[#e50914] h-[60px] lg:px-10 px-[20px] md:rounded-md rounded-[4px] border-[1px] border-black/30 text-[24px] flex items-center hover:bg-[#C2050E] transition ease-linear'>Get Started <span className='w-[20px] h-[20px] ml-2'><MdArrowForwardIos /></span></button>
             </div>

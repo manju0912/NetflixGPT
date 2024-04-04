@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import LandingPage from '../pages/LandingPage'
 import Login from './Login'
 import Home from '../pages/HomePage'
@@ -12,15 +12,17 @@ import { addUser, removeUser } from '../store/userSlice'
 const Body = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid: uid, email: email, displayName: displayName}));
-        // ...
+        navigate("/home")
       } else {
         dispatch(removeUser());
+        navigate("/")
       }
     });
     

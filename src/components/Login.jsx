@@ -2,7 +2,6 @@ import { useRef, useState } from 'react'
 import { checkValidData } from '../utils/validate'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../store/userSlice';
 
@@ -17,12 +16,11 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleFormSubmit = () => {
 
-      const errors = checkValidData(name.current?.value, email.current?.value, password.current?.value);
+      const errors = checkValidData(name.current?.value, email.current.value, password.current.value);
 
       setNameErrorMessage(errors.name || '');
       setEmailErrorMessage(errors.email || '');
@@ -39,7 +37,6 @@ const Login = () => {
           .then(() => {
             const { uid, email, displayName } = auth.currentUser;
             dispatch(addUser({ uid: uid, email: email, displayName: displayName}));
-            navigate('/home');
           }).catch((error) => {
             setPasswordErrorMessage(error.message)
           })
@@ -53,7 +50,6 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log('user sign in', user);
-          navigate('/home');
         })
         .catch((error) => {
           console.log(error);

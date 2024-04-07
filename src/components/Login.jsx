@@ -46,7 +46,7 @@ const Login = () => {
         });
       }else{
         // Sign In Logic
-        signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+        signInWithEmailAndPassword(auth, email.current?.value, password.current?.value)
         .then((userCredential) => {
           const user = userCredential.user;
           console.log('user sign in', user);
@@ -86,7 +86,7 @@ const Login = () => {
               <input ref={password} type="password" name="pass" placeholder='Password' className='w-full border-[1px] border-white/70 bg-transparent rounded-[4px] p-[10px]' />
             </div>
             <p className='mt-4 text-[#e50914]'>{passwordErrorMessage}</p>
-            <button type='submit' className='text-white bg-[#e50914] w-full mt-6 mb-4 py-[10px] rounded-[4px] font-medium' onClick={() => handleFormSubmit()}>
+            <button type='submit' className='text-white bg-[#e50914] w-full mt-6 mb-4 py-[10px] rounded-[4px] font-medium' onClick={handleFormSubmit}>
               {isSignIn ? "Sign In" : "Sign Up"}
             </button>
             {isSignIn && (

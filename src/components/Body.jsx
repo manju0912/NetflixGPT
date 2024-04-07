@@ -1,7 +1,7 @@
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import LandingPage from '../pages/LandingPage'
 import Login from './Login'
-import Home from '../pages/HomePage'
+import Home from '../pages/HomePage/HomePage'
 import { auth } from '../utils/firebase'
 import { useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
@@ -15,7 +15,7 @@ const Body = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid: uid, email: email, displayName: displayName}));
@@ -26,6 +26,7 @@ const Body = () => {
       }
     });
     
+    return () => unsubscribe();
   },[])
 
   return (

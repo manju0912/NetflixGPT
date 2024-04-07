@@ -1,6 +1,6 @@
 import VideoList from './VideoList'
 
-const VideoContainer = () => {
+const VideosContainer = () => {
   return (
     <div>
       <VideoList />
@@ -8,4 +8,4 @@ const VideoContainer = () => {
   )
 }
 
-export default VideoContainer
+export default VideosContainer

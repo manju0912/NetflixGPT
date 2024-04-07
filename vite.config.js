@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     outDir: "public"
   },
-  assetsInclude: ['**/*.m4v']
+  assetsInclude: ['**/*.{m4v,mp4}']
 })

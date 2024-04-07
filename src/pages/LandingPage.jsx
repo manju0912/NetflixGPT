@@ -23,10 +23,10 @@ const LandingPage = () => {
   }
 
   return (
-    <main className='bg-black w-full overflow-x-hidden'>
+    <main className='w-full overflow-x-hidden'>
       <section className='w-full h-[100vh] bg-[url("/src/assets/banner.jpg")] bg-bottom bg-cover'>
         <div className="w-full h-[100vh] bg-black/60">
-          <div className='xl:w-[1080px] sm:w-[600px] md:w-[720px] text-white text-center top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute sm:px-8 px-0'>
+          <div className='xl:w-[1080px] sm:w-[600px] md:w-[720px] text-white text-center top-[60%] left-[50%] translate-x-[-50%] translate-y-[-50%] absolute px-8 md:px-0'>
             <h1 className='lg:text-[56px] text-[32px] font-bold'>Unlimited movies, TV shows and more</h1>
             <p className='lg:text-[28px] md:text-[20px] text-[18px] my-2'>Watch anywhere. Cancel anytime.</p>
             <p className='lg:text-[22px] text-[18px] lg:my-4 my-6 sm:px-[40px] px-0'>Ready to watch? Enter your email to create or restart your membership.</p>

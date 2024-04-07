@@ -18,14 +18,21 @@ const Header = () => {
   }
 
   return (
-    <header className='w-full absolute z-50 py-6 bg-gradient-to-b from-black/80'>
+    <header className='w-full fixed z-50 py-6 bg-gradient-to-b from-black top-0 left-0'>
       <div className="lg:w-[1080px] sm:w-[600px] md:w-[720px] sm:px-8 px-0 mx-auto my-0">
         <div className='flex justify-between items-center'>
+        {!user ?
           <Link to='/'>
             <div className="logo">
-              <img src={logo} alt="logo" className='lg:w-[200px] sm:w-[130px]' />
+              <img src={logo} alt="logo" className='lg:w-[180px] sm:w-[130px]' />
+            </div>
+          </Link> :
+          <Link to='/home'>
+            <div className="logo">
+              <img src={logo} alt="logo" className='lg:w-[180px] sm:w-[130px]' />
             </div>
           </Link>
+        }
           
           {!user ? 
           <div className='flex items-center lg:gap-x-6 gap-x-2 sm:text-sm md:text-base'>

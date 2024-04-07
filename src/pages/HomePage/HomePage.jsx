@@ -1,6 +1,6 @@
 import useNowPlaying from "../../hooks/useNowPlaying"
 import HeroContainer from "./HeroContainer";
-import VideoContainer from "./VideoContainer";
+import VideosContainer from "./VideosContainer";
 
 
 const HomePage = () => {
@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <div>
       <HeroContainer />
-      <VideoContainer />
+      <VideosContainer />
     </div>
   )
 }

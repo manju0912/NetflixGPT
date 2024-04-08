@@ -11,15 +11,15 @@ const HeroContainer = ({title, overview, movieId}) => {
   
 
   return (
-    <div className="w-full h-[640px] relative overflow-y-hidden">
-      <div className="w-full h-full bg-gradient-to-t from-black absolute"></div>
+    <div className="w-full h-[100vh] relative overflow-y-hidden">
+      <div className="w-full h-full bg-gradient-to-t from-black/90 absolute"></div>
       <iframe className="w-full aspect-video -mt-[5%]"
         title="YouTube Video"
         src={"https://www.youtube.com/embed/"+movieTrailer?.key+"?autoplay=1&loop=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0"}
         frameBorder="0"
         allowFullScreen
       />
-      <div className="lg:w-[1080px] sm:w-[600px] md:w-[720px] px-8 md:px-0 absolute top-[40%] left-[10%]">
+      <div className="lg:w-[1080px] sm:w-[600px] md:w-[720px] px-8 md:px-0 absolute top-[25%] left-[10%]">
         <div className="lg:w-[40%] sm:w-full md:w-[70%]">
           <h1 className="text-[3vw] font-bold">{title}</h1>
           <p className="text-base py-4">{overview}</p>

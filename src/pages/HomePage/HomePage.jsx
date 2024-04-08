@@ -2,10 +2,12 @@ import { useSelector } from 'react-redux';
 import useNowPlaying from "../../hooks/useNowPlaying"
 import HeroContainer from "./HeroContainer";
 import VideosContainer from "./VideosContainer";
+import useTrendingMovies from '../../hooks/useTrendingMovies';
 
 
 const HomePage = () => {
   useNowPlaying();
+  useTrendingMovies();
 
   const movies = useSelector(store => store.movies?.nowPlayingMovies);
   if(!movies) return;

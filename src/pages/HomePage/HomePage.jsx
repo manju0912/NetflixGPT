@@ -14,7 +14,7 @@ const HomePage = () => {
   const movies = useSelector(store => store.movies?.nowPlayingMovies);
   if(!movies) return;
 
-  const backgroundVideo = movies[0];
+  const backgroundVideo = movies[5];
   console.log(backgroundVideo);
 
   const {original_title, overview, id} = backgroundVideo;

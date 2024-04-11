@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import { IoLanguage } from "react-icons/io5";
-import { useSelector } from 'react-redux';
+import { IoSearch } from "react-icons/io5";
+import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../utils/firebase';
 import { signOut } from 'firebase/auth';
 import profileIcon from '../assets/profile-icon.jpg'
+import { toggleGptSearchView } from '../store/gptSlice';
 
 const Header = () => {
 
+  const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
 
   const handleSignOut = () => {
@@ -15,6 +18,10 @@ const Header = () => {
     .then(() => {}).catch((error) => {
       console.log(error);
     });
+  }
+
+  const handleGptSearchClick = () => {
+    dispatch(toggleGptSearchView());
   }
 
   return (
@@ -48,8 +55,9 @@ const Header = () => {
             </Link>
           </div> :
           <div className='flex items-center lg:gap-x-6 gap-x-2 sm:text-sm md:text-base'>
+            <button type='submit' className='text-white bg-[#e50914] p-2 rounded-full font-medium hover:bg-[#C2050E] transition ease-linear' onClick={handleGptSearchClick}><IoSearch /></button>
             <img src={profileIcon} alt="profile icon" className='w-8 h-8' />
-            <button onClick={handleSignOut} className='text-white bg-[#e50914] md:px-4 px-3 py-1 rounded-[4px] hover:bg-[#C2050E] transition ease-linear'>Sign Out</button>
+            <button onClick={handleSignOut} className='text-white bg-[#e50914] md:px-4 px-3 py-1 rounded-[2px] hover:bg-[#C2050E] transition ease-linear'>Sign Out</button>
           </div>
         }
         </div>

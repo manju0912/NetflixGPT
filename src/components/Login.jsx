@@ -49,10 +49,10 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email.current?.value, password.current?.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log('user sign in', user);
+          
         })
         .catch((error) => {
-          console.log(error);
+          setPasswordErrorMessage(error.message);
         });
     }
     

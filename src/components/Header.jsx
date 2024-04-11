@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../utils/firebase';
 import { signOut } from 'firebase/auth';
 import profileIcon from '../assets/profile-icon.jpg'
-import { toggleGptSearchView } from '../store/gptSlice';
+import { toggleSearchView } from '../store/claudeSlice';
 
 const Header = () => {
 
@@ -20,8 +20,8 @@ const Header = () => {
     });
   }
 
-  const handleGptSearchClick = () => {
-    dispatch(toggleGptSearchView());
+  const handleSearchClick = () => {
+    dispatch(toggleSearchView());
   }
 
   return (
@@ -55,7 +55,7 @@ const Header = () => {
             </Link>
           </div> :
           <div className='flex items-center lg:gap-x-6 gap-x-2 sm:text-sm md:text-base'>
-            <button type='submit' className='text-white bg-[#e50914] p-2 rounded-full font-medium hover:bg-[#C2050E] transition ease-linear' onClick={handleGptSearchClick}><IoSearch /></button>
+            <button type='submit' className='text-white bg-[#e50914] p-2 rounded-full font-medium hover:bg-[#C2050E] transition ease-linear' onClick={handleSearchClick}><IoSearch /></button>
             <img src={profileIcon} alt="profile icon" className='w-8 h-8' />
             <button onClick={handleSignOut} className='text-white bg-[#e50914] md:px-4 px-3 py-1 rounded-[2px] hover:bg-[#C2050E] transition ease-linear'>Sign Out</button>
           </div>

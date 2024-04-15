@@ -1,22 +1,25 @@
 import { useRef } from "react";
-import anthropic from "../utils/claudeai";
+import genAI from "../utils/genai";
 import { IoSearch } from "react-icons/io5";
 
 const SearchPage = () => {
   const searchText = useRef(null);
 
   const handleClaudeSearchClick = async () => {
+    console.log(searchText.current.value);
+      const prompt = "Act as a movie recommendation system and suggest some movies for the query" +" "+ searchText.current.value + ". Only give me names of top 10 movies separated by comma."
 
-    const query = "Act as a movie recommendation system and suggest some movies for the query" + searchText.current.value + ". Only give me names of top 10 movies separated by comma."
+      // API call to GenAI to get the movie results
+     
+      const model = genAI.getGenerativeModel({
+        model: "gemini-pro"
+      });
 
-    const message = await anthropic.messages.create({
-      max_tokens: 1024,
-      messages: [{ role: 'user', content: query }],
-      model: 'claude-3-opus-20240229',
-    });
-  
-    console.log(message.content);
-    
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+      console.log(text);
+
   }
 
   return (

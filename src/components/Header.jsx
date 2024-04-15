@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../utils/firebase';
 import { signOut } from 'firebase/auth';
 import profileIcon from '../assets/profile-icon.jpg'
-import { toggleSearchView } from '../store/claudeSlice';
+import { toggleSearchView } from '../store/genAiSlice';
 
 const Header = () => {
 

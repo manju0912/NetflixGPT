@@ -12,7 +12,7 @@ const HomePage = () => {
   useTrendingMovies();
   usePopularMovies();
 
-  const showSearchPage = useSelector((store) => store.claudeSearch.showClaudeSearch);
+  const showSearchPage = useSelector((store) => store.genAiSearch.showGenAiSearch);
 
   const movies = useSelector(store => store.movies?.nowPlayingMovies);
   if(!movies) return;

@@ -4,7 +4,7 @@ import HeroContainer from "./HeroContainer";
 import VideosContainer from "./VideosContainer";
 import useTrendingMovies from '../../hooks/useTrendingMovies';
 import usePopularMovies from '../../hooks/usePopularMovies';
-import SearchPage from '../SearchPage';
+import SearchPage from '../SearchPage/SearchPage';
 
 
 const HomePage = () => {

@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { useDispatch } from 'react-redux';
 import { addUser, removeUser } from '../store/userSlice'
+import WatchPage from '../pages/MovieDetailsPage/WatchPage'
 
 
 const Body = () => {
@@ -35,6 +36,7 @@ const Body = () => {
         <Route path='/' element={<LandingPage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/home' element={<Home />} />
+        <Route path='/movie/:id' element={<WatchPage />} />
       </Routes>
     </div>
   )

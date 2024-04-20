@@ -63,11 +63,11 @@ const Login = () => {
   }
 
   return (
-    <section className='w-full h-[100%] bg-[url("/src/assets/banner.jpg")] bg-left-top'>
+    <section className='w-full bg-[url("/src/assets/banner.jpg")] bg-left-top'>
       <div className="w-full h-full bg-black/50 lg:py-[10%] py-[12%]">
-        <div className='lg:w-[35%] w-[60%] p-[5%] bg-black/80 mx-auto'> 
+        <div className='w-[70%] lg:w-[35%] sm:w-[60%] mt-8 sm:mt-0 p-[5%] bg-black/80 mx-auto'> 
           <form onSubmit={(e) => e.preventDefault()} className='text-white'>
-            <h2 className='text-[30px] font-bold'>{isSignIn ? "Sign In" : "Sign Up"}</h2>
+            <h2 className='text-[26px] sm:text-[30px] font-bold'>{isSignIn ? "Sign In" : "Sign Up"}</h2>
             {
               !isSignIn && (
                 <div>

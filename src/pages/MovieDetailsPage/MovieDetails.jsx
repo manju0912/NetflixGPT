@@ -17,18 +17,18 @@ const MovieDetails = () => {
 
   return (
     <div className='w-full py-10'>
-      <div className='py-10 flex justify-between gap-4 border-y border-gray-500 mx-[12%]'>
-        <div className="w-1/3">
-          <img src={IMG_CDN_URL + poster_path} alt="Movie Poster" className='w-[80%] rounded h-auto object-cover' />
+      <div className='py-10 flex flex-col-reverse sm:flex-row justify-between gap-4 border-y border-gray-500 mx-[12%]'>
+        <div className="w-full sm:w-1/3">
+          <img src={IMG_CDN_URL + poster_path} alt="Movie Poster" className='w-[80%] rounded h-auto object-cover mx-auto' />
         </div>
-        <div className="w-2/3">
+        <div className="w-full sm:w-2/3">
           <div className='flex items-center gap-8 border-b border-gray-500'>
-            <h2 className='text-gray-200 font-medium text-3xl tracking-wide py-2'>{title}</h2>
+            <h2 className='text-gray-200 font-medium text-2xl sm:text-3xl tracking-wide py-2'>{title}</h2>
             <div className="border border-gray-400 rounded py-1 px-2 text-xs text-gray-200 font-medium tracking-wide">IMDb <span>{(vote_average).toFixed(1)}</span></div>
           </div>
-          <div className='border-b border-gray-500 p-4 flex items-center gap-5 text-gray-300'>
+          <div className='w-full border-b border-gray-500 p-4 flex flex-col sm:flex-row items-center gap-5 text-gray-300 mx-auto'>
             <span>{Math.floor(runtime / 60)}h {runtime % 60}min</span>
-            <ul className="flex gap-2 border-l border-gray-400 pl-4">
+            <ul className="flex flex-wrap gap-2 sm:border-l border-gray-400 pl-4">
               {
                 genres.map((genre, index) => <li key={index} className='border border-gray-400 rounded-full py-1 px-3 text-xs'>{genre.name}</li>)
               }

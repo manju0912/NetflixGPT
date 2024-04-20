@@ -22,7 +22,7 @@ const HomePage = () => {
   const {original_title, overview, id} = backgroundVideo;
 
   return (
-    <div>
+    <div className='w-screen overflow-hidden'>
       {
         showSearchPage ? <SearchPage /> :
         <>

@@ -44,13 +44,13 @@ const SearchBar = () => {
   return (
     <section className='w-full h-[70vh] flex flex-col justify-center items-center bg-[url("/src/assets/banner.jpg")] bg-cover bg-no-repeat relative'>
       <div className="absolute w-full h-full bg-black/65"></div>
-      <div className="absolute w-[60%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute w-full sm:w-[60%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-8 sm:px-0">
         <div className="flex justify-center items-end">
           <div className="w-[80%]">
             <label className="ml-6 font-medium flex items-center mb-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-purple-200">Search with Gemini AI <WiStars className="w-8 h-8 text-violet-500" /></label>
-            <input ref={searchText} type="text" name="search" placeholder='What do you want to watch?' className='w-full border-[1px] border-white/70 bg-transparent rounded-l-full py-[10px] px-[22px]' />
+            <input ref={searchText} type="text" name="search" placeholder='What do you want to watch?' className='w-full text-sm border-[1px] border-white/70 bg-transparent rounded-l-full py-[10px] px-[22px]' />
           </div>
-          <button type='submit' className='text-white bg-[#e50914] hover:bg-[#C2050E] transition ease-linear border border-1 border-white/70 py-[10px] px-[24px] rounded-r-full font-medium' onSubmit={(e) => e.preventDefault()} onClick={handleGenAISearchClick}><IoSearch className="w-6 h-6" /></button>
+          <button type='submit' className='text-white bg-[#e50914] hover:bg-[#C2050E] transition ease-linear border border-1 border-white/70 py-[8px] px-[24px] rounded-r-full font-medium' onSubmit={(e) => e.preventDefault()} onClick={handleGenAISearchClick}><IoSearch className="w-6 h-6" /></button>
         </div>
       </div>
     </section>

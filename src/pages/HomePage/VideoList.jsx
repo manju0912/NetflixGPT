@@ -7,7 +7,7 @@ const VideoList = ({title, movies}) => {
       <div className="mt-4">
         <h2 className="text-lg font-medium text-white/80 py-2">{title}</h2>
       </div>
-      <div className="flex cursor-all-scroll overflow-x-auto no-scrollbar">
+      <div className="relative flex cursor-pointer overflow-x-scroll scroll-smooth no-scrollbar">
         <div className="flex gap-x-4">
         {
           movies?.map((movie, index) => (<VideoCard key={index} movieTitle={movie.title} releaseDate={movie.release_date} rating={movie.vote_average} posterPath={movie.poster_path} movie={{...movie}} />))

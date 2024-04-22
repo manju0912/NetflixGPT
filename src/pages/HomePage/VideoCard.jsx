@@ -9,7 +9,7 @@ const VideoCard = ({movieTitle, releaseDate, rating, posterPath, movie}) => {
   return (
     <Link to={`/movie/${movie?.id}`}>
       <div className="w-[160px] h-[280px] md:w-[180px] md:h-[320px] rounded-md overflow-hidden">
-      <div className="w-full h-[80%] rounded-md">
+      <div className="w-full h-[70%] rounded-md">
         <img src={IMG_CDN_URL + posterPath} alt="poster" className="w-full h-full aspect-auto" />
       </div>
       <div className='flex justify-between gap-4 px-1 py-2 text-sm'>

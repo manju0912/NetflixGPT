@@ -30,7 +30,6 @@ const SearchBar = () => {
       const result = await model.generateContent(prompt);
       const response = await result.response;
       const text = await response.text();
-      console.log(text);
 
       const movies = text.split(',');
 

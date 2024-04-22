@@ -10,10 +10,7 @@ const MovieDetails = () => {
     return null;
   }
 
-  console.log(details)
   const {title, release_date, genres, overview, poster_path, production_companies, production_countries, spoken_languages, runtime, vote_average, status} = details;
-
-  console.log('details', details)
 
   return (
     <div className='w-full py-10'>

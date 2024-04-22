@@ -16,15 +16,24 @@ const WatchPage = () => {
 
   const showSearchPage = useSelector((store) => store.genAiSearch.showGenAiSearch);
 
+  const details = useSelector((store) => store.movies?.movieDetails);
+  const movieTrailer = useSelector((store) => store.movies?.movieTrailer);
+
   return (
     <section className='w-full'>
         {
           showSearchPage ? (<SearchPage />) :
           (
             <>
-              <MovieTrailer />
-              <MovieDetails />
-          </>
+            {
+              details && movieTrailer && (
+                <>
+                  <MovieTrailer />
+                  <MovieDetails />
+                </>
+              )
+            }
+            </>
           )
         }
     </section>

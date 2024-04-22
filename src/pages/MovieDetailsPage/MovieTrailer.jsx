@@ -2,7 +2,7 @@ import {useSelector} from 'react-redux';
 
 const MovieTrailer = () => {
 
-  const movieTrailer = useSelector((store) => store.movies.movieTrailer);
+  const movieTrailer = useSelector((store) => store.movies?.movieTrailer);
 
   return (
     <div className='w-full mx-auto relative'>

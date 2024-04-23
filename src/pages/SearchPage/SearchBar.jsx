@@ -12,9 +12,11 @@ const SearchBar = () => {
   const searchText = useRef(null);
 
   const searchedMovies = async (movie) => {
-    const data = await fetch(`https://api.themoviedb.org/3/search/movie?query=${movie}&include_adult=false&language=en-US&page=1`, API_OPTIONS);
-    const json = await data.json();
-    return json.results;
+        const data = await fetch(`https://api.themoviedb.org/3/search/movie?query=${movie}&include_adult=false&page=1`, API_OPTIONS);
+        const json = await data.json();
+        console.log('Json Result', json.results)
+        const filteredMovies = json.results.filter((movie) => movie.vote_average > 6.5);
+        return filteredMovies;
   }
 
   const handleGenAISearchClick = async () => {
@@ -28,14 +30,19 @@ const SearchBar = () => {
       const prompt = "Act as a movie recommendation system and suggest some top rated movies for the query" +" "+ searchText.current.value + ". Only give me names of top 15 highest rated movies separated by comma like the given example: 'Titanic, Friends, The Notebook, Alien, Arjun Reddy'.";
 
       const result = await model.generateContent(prompt);
+      console.log('Result', result)
       const response = await result.response;
       const text = await response.text();
 
+      console.log('Text', text)
       const movies = text.split(',');
+      console.log('Movies', movies)
 
       const promiseArray = movies.map((movie) => searchedMovies(movie));
 
       const searchResult = await Promise.all(promiseArray);
+
+      console.log('Search Result', searchResult)
 
       dispatch(addSearchedMovieResult({movieName: movies, searchResult: searchResult}));
   }

@@ -8,6 +8,7 @@ import SearchPage from '../SearchPage/SearchPage';
 import useTopRated from '../../hooks/useTopRated';
 import useUpcoming from '../../hooks/useUpcoming';
 import useRecommended from '../../hooks/useRecommended';
+import useNowPlayingIndia from '../../hooks/useNowPlayingIndia';
 
 
 const HomePage = () => {
@@ -17,6 +18,7 @@ const HomePage = () => {
   useTopRated();
   useUpcoming();
   useRecommended();
+  useNowPlayingIndia();
 
   const showSearchPage = useSelector((store) => store.genAiSearch.showGenAiSearch);
 

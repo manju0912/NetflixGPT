@@ -2,11 +2,11 @@
 ## NetflixGPT - A Movie Recommendation App with Gemini API integration
 
 ### Overview
-NetflixGPT is a Movie Recommendation web App built using React JS with Vite, integrating GenAI for search functionality, Firebase for authentication, and TMDB API for fetching movie data. The app provides users with personalized movie recommendations based on their preferences and interests.
+NetflixGPT is a Movie Recommendation web App built using React JS with Vite, integrating Gemini API for search functionality, Firebase for authentication, and TMDB API for fetching movie data. The app provides users with personalized movie recommendations based on their preferences and interests.
 
 ### Features
 
-- **GenAI Integration:** Utilizes GenAI API for intelligent movie recommendations, providing users with tailored suggestions based on their input.
+- **Gemini API Integration:** Utilizes Gemini AI API for intelligent movie recommendations, providing users with tailored suggestions based on their input.
 - **Firebase Authentication:** Secure authentication system powered by Firebase, allowing users to sign in securely and access personalized features.
 - **TMDB API Integration:** Fetches movie data from TMDB API, ensuring an extensive database of movies for recommendations and search functionality.
 - **Responsive Design:** Built with a responsive design using Tailwind CSS, ensuring optimal user experience across devices and screen sizes.
@@ -14,14 +14,14 @@ NetflixGPT is a Movie Recommendation web App built using React JS with Vite, int
 
 ### Challenges
 
-- **Integration of GenAI:** Implementing GenAI API for intelligent movie recommendations required careful handling of asynchronous requests and data parsing to ensure accurate and relevant suggestions.
+- **Integration of Gemini API:** Implementing Gemini AI API for intelligent movie recommendations required careful handling of asynchronous requests and data parsing to ensure accurate and relevant suggestions.
 - **Firebase Integration:** Setting up Firebase authentication involved configuring authentication methods, handling user sessions, and managing user data securely.
 - **TMDB API Handling:** Interfacing with the TMDB API posed challenges related to rate limiting, pagination, and data formatting to ensure smooth retrieval and display of movie information.
 
 
 ### Tech Stack Used
 
-**Client:** React JS, Redux Toolkit, TailwindCSS, Firebase Authentication, TMDB API, GenAI API
+**Client:** React JS, Redux Toolkit, TailwindCSS, Firebase Authentication, TMDB API, Gemini API
 
 
 ### Getting Started

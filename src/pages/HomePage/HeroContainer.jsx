@@ -12,8 +12,8 @@ const HeroContainer = ({title, overview, movieId}) => {
 
   return (
     <div className="w-full sm:h-[100vh] relative overflow-hidden">
-      <div className="w-full h-full bg-gradient-to-t from-black/95 absolute -z-20 sm:z-0"></div>
-      <iframe className="w-full aspect-video mt-0 lg:-mt-[6%] relative"
+      <div className="w-full h-full bg-gradient-to-t from-black absolute -z-20 sm:z-0"></div>
+      <iframe className="w-full aspect-video mt-0 lg:-mt-[5%] relative"
         title="YouTube Video"
         src={"https://www.youtube.com/embed/"+movieTrailer?.key+"?autoplay=1&loop=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0"}
         frameBorder="0"

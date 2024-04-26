@@ -5,12 +5,18 @@ import VideosContainer from "./VideosContainer";
 import useTrendingMovies from '../../hooks/useTrendingMovies';
 import usePopularMovies from '../../hooks/usePopularMovies';
 import SearchPage from '../SearchPage/SearchPage';
+import useTopRated from '../../hooks/useTopRated';
+import useUpcoming from '../../hooks/useUpcoming';
+import useRecommended from '../../hooks/useRecommended';
 
 
 const HomePage = () => {
   useNowPlaying();
   useTrendingMovies();
   usePopularMovies();
+  useTopRated();
+  useUpcoming();
+  useRecommended();
 
   const showSearchPage = useSelector((store) => store.genAiSearch.showGenAiSearch);
 

@@ -4,6 +4,8 @@
 ### Overview
 NetflixGPT is a Movie Recommendation web App built using React JS with Vite, integrating Gemini API for search functionality, Firebase for authentication, and TMDB API for fetching movie data. The app provides users with personalized movie recommendations based on their preferences and interests.
 
+### LIVE URL - [https://netflix-gpt-hazel-beta.vercel.app/]
+
 ### Features
 
 - **Gemini API Integration:** Utilizes Gemini AI API for intelligent movie recommendations, providing users with tailored suggestions based on their input.
